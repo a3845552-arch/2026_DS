@@ -2,10 +2,112 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>私の最初のWebページ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ねこカフェ みけ茶房</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --milk: #fbf3e4;
+    --tea: #6b4a36;
+    --peach: #f3b58f;
+    --sage: #3f5b4b;
+    --chalk: #f4f1e6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--milk);
+    color: var(--tea);
+    font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Meiryo", sans-serif;
+    line-height: 1.8;
+  }
+  header {
+    text-align: center;
+    padding: 56px 20px 32px;
+    background: var(--peach);
+    border-bottom: 6px dotted var(--tea);
+  }
+  header h1 { margin: 0; font-size: clamp(2rem, 7vw, 3.2rem); letter-spacing: .08em; }
+  header p { margin: 8px 0 0; font-size: 1.1rem; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 20px 56px; }
+  h2 { font-size: 1.5rem; margin: 40px 0 12px; }
+  .cats { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .cat { background: #fff; border-radius: 20px 20px 20px 4px; padding: 16px 18px; border: 2px solid var(--tea); }
+  .cat b { font-size: 1.15rem; }
+  .cat span { font-size: 2rem; display: block; }
+
+  .board { position: relative; margin-top: 90px; }
+  .peek { position: absolute; top: -62px; right: 40px; width: 90px; height: 70px; }
+  .menu {
+    background: var(--sage);
+    color: var(--chalk);
+    border: 10px solid #a9794f;
+    border-radius: 10px;
+    padding: 24px 28px;
+  }
+  .menu h2 { margin-top: 0; color: var(--chalk); }
+  .menu ul { list-style: none; margin: 0; padding: 0; }
+  .menu li { display: flex; justify-content: space-between; border-bottom: 1px dashed rgba(244,241,230,.5); padding: 6px 0; }
+
+  table { border-collapse: collapse; width: 100%; background: #fff; }
+  th, td { border: 2px solid var(--tea); padding: 8px 12px; text-align: left; }
+  th { background: var(--peach); width: 30%; }
+
+  .rules li { margin-bottom: 4px; }
+  footer { text-align: center; padding: 24px; background: var(--tea); color: var(--milk); }
+</style>
 </head>
 <body>
-<h1>こんにちは！</h1>
-<p>これは私がGitHub Pagesで公開したページです。</p>
+
+<header>
+  <h1>ねこカフェ みけ茶房</h1>
+  <p>ねこたちと、のんびりお茶の時間</p>
+</header>
+
+<main>
+  <h2>お店の猫たち</h2>
+  <div class="cats">
+    <div class="cat"><span>🐈</span><b>みけ</b><br>店長。三毛猫の女の子。窓辺で日なたぼっこ中。</div>
+    <div class="cat"><span>🐈‍⬛</span><b>くろまめ</b><br>人なつっこい黒猫。膝の上が大好き。</div>
+    <div class="cat"><span>😺</span><b>もち</b><br>白くてふわふわ。おやつの音に敏感。</div>
+  </div>
+
+  <div class="board">
+    <svg class="peek" viewBox="0 0 90 70" aria-hidden="true">
+      <polygon points="8,40 14,4 36,24" fill="#e6a77c"/>
+      <polygon points="82,40 76,4 54,24" fill="#e6a77c"/>
+      <ellipse cx="45" cy="50" rx="38" ry="26" fill="#f3b58f"/>
+      <circle cx="32" cy="44" r="4" fill="#3b2a20"/>
+      <circle cx="58" cy="44" r="4" fill="#3b2a20"/>
+      <polygon points="41,52 49,52 45,57" fill="#7a3f3f"/>
+    </svg>
+    <section class="menu">
+      <h2>本日のメニュー</h2>
+      <ul>
+        <li><span>ミルクティー</span><span>500円</span></li>
+        <li><span>ねこ型パンケーキ</span><span>800円</span></li>
+        <li><span>カフェラテ（ラテアート付き）</span><span>600円</span></li>
+        <li><span>にくきゅうクッキー</span><span>300円</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <h2>お店の情報</h2>
+  <table>
+    <tr><th>営業時間</th><td>11:00〜18:00</td></tr>
+    <tr><th>定休日</th><td>毎週水曜日</td></tr>
+    <tr><th>入場料</th><td>30分 800円（ドリンク付き）</td></tr>
+  </table>
+
+  <h2>ねこと仲良くなるルール</h2>
+  <ul class="rules">
+    <li>ねこが寝ているときは、そっとしておきましょう。</li>
+    <li>抱っこや追いかけ回しはしないでください。</li>
+    <li>撮影はフラッシュなしでお願いします。</li>
+  </ul>
+</main>
+
+<footer>© みけ茶房（授業課題で作成したサンプルページです）</footer>
+
 </body>
 </html>
